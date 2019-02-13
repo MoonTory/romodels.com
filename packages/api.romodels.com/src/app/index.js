@@ -12,9 +12,9 @@ import cors from 'cors';
 /**
  * Local_Module dependencies.
  */
-// import { api } from '../routes';
+import { TsukiApi } from '../interfaces/api';
 import connectMongoDb from '../infra/db/mongo/connectMongo';
-// import { errorCatcher, errorHandler } from '../utils/middlewares';
+import { errorCatcher, errorHandler } from '../infra/utils/middlewares';
 
 /**
  * Configs.
@@ -24,6 +24,8 @@ import { NODE_ENV /*, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD*/ } from '../config
 export class TsukiServer extends express {
   constructor(port) {
     super();
+
+    this.api = new TsukiApi();
 
     this.set('port', port);
     this.config();
@@ -41,5 +43,10 @@ export class TsukiServer extends express {
     this.use(morgan(NODE_ENV));
 
     await connectMongoDb();
+
+    this.use(this.api);
+
+    this.use(errorCatcher);
+    this.use(errorHandler);
   };
 }
