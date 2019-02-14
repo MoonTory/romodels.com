@@ -2,18 +2,11 @@ api.playfaded.com:
 Explore the option of using JWT or Cookie base authentication, I am probably leaning towards using JWT,
 for authentication mostly for the fact of already having prior experience in implementing.
 
-Database:
-    ☐ Update USER MONGOOSE MODEL so that it can accept a DOB @high
-        I will need to look into how mongoose stores dates, so that I may find the right format that can be we used across the Web server
-    and the Gamer Server.
-    ☐ Look into automatically creating Gamer Server Account upon USER REGISTRATION @high
-        Probably should speaak to Sympatic or Mii about sending queries for user account creation.
 
 Email:
     I am currently considering two options for sending emails -> Nodemailer || Sparkpost
     ☐ Setup a mail service for sending the confirmation emails
-    ☐ Setup a proper email service / domain for the website (e.g. playfaded.com), should probably discuss this with the guys on Discord to figure out the domain stuff.
-    ☐ Add a way to resend confirmation email
+    ✔ Add a way to resend confirmation email @done(19-02-13 23:29)
     What would be best practice? -> Deleting the old redis Id and invaidating that link, or just generating a new confirmation email and leave the old one to expire by itself. I wonder what ammout of
     time the link should be valid for, currently the confirmation link is valid for 24 hours.
     
