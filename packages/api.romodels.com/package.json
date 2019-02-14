@@ -1,42 +1,37 @@
 {
-  "name": "@romodels/api",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Gustavo Quinta - MoonTory",
+  "name": "@romodels.com/api",
+  "version": "2.0.0",
+  "description": "Back end API for playfaded.com",
+  "main": "www",
+  "author": "Gustavo Quinta <gustavoqnt40@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "babel-node -r node_modules/dotenv/config src/index",
-    "start:dev": "nodemon -r node_modules/dotenv/config --exec babel-node src/index.js",
-    "build": "babel src --out-dir dist",
-    "serve": "node -r ./node_modules/dotenv/config dist/index.js"
+    "start": "node -r esm -r dotenv/config src/bin/www",
+    "dev": "nodemon -r esm -r dotenv/config src/bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "compression": "^1.7.3",
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
+    "esm": "^3.1.1",
     "express": "^4.16.4",
-    "helmet": "^3.15.1",
+    "helmet": "^3.15.0",
     "http-errors": "^1.7.1",
+    "ioredis": "^4.5.1",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.11",
+    "mongoose": "^5.4.6",
     "morgan": "^1.9.1",
     "nodemailer": "^5.1.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/preset-env": "^7.3.1",
-    "babel-plugin-root-import": "^6.1.0",
     "dotenv": "^6.2.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.9"
   }
 }

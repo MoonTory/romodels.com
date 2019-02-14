@@ -1,0 +1,42 @@
+api.playfaded.com:
+Explore the option of using JWT or Cookie base authentication, I am probably leaning towards using JWT,
+for authentication mostly for the fact of already having prior experience in implementing.
+
+Database:
+    ☐ Update USER MONGOOSE MODEL so that it can accept a DOB @high
+        I will need to look into how mongoose stores dates, so that I may find the right format that can be we used across the Web server
+    and the Gamer Server.
+    ☐ Look into automatically creating Gamer Server Account upon USER REGISTRATION @high
+        Probably should speaak to Sympatic or Mii about sending queries for user account creation.
+
+Email:
+    I am currently considering two options for sending emails -> Nodemailer || Sparkpost
+    ☐ Setup a mail service for sending the confirmation emails
+    ☐ Setup a proper email service / domain for the website (e.g. playfaded.com), should probably discuss this with the guys on Discord to figure out the domain stuff.
+    ☐ Add a way to resend confirmation email
+    What would be best practice? -> Deleting the old redis Id and invaidating that link, or just generating a new confirmation email and leave the old one to expire by itself. I wonder what ammout of
+    time the link should be valid for, currently the confirmation link is valid for 24 hours.
+    
+
+Core Auth Functionality:
+✔ Users can sign up for to the app with a unique email @done(19-02-05 18:07)
+✔ Users cannot sign up for to the app with a duplicate email @done(19-02-05 18:07)
+✔ Users can login to the app with valid email/password @done(19-02-05 18:07)
+✔ Users cannot login to the app with a blank or missing email @done(19-02-05 18:07)
+✔ Users cannot login to the app with a blank or incorrect password @done(19-02-05 18:07)
+☐ There is a resource that can only be seen by logged in users
+☐ There is a resource that can only be seen by a specific user
+Authentication Security:
+✔ Password is hashed in the database using a slow-hashing algorithm @critical @done(19-02-05 17:38)
+✔ JWT is parsed with `Authentication` header @high @done(19-02-05 18:08)
+✔ Encryption keys are set in environment variables @critical @done(19-02-05 17:38)
+Authentiaction:
+✔ Add auth router @started(19-02-05 17:39) @done(19-02-05 18:08) @lasted(29m14s)
+✔ Create user with POST /register @started(19-02-05 17:39) @done(19-02-05 18:08) @lasted(29m18s)
+    ✔ validate required fields @done(19-02-05 18:08)
+    ✔ Check if email is unique @done(19-02-05 18:08)
+    ✔ hash password with bcrypt @done(19-02-05 18:08)
+    ✔ insert into db @done(19-02-05 18:08)
+✔ Login user with POST /login @done(19-02-05 18:08)
+    ✔ check if email in db @done(19-02-05 18:08)
+    ✔ compare password with hashed password in db @done(19-02-05 18:08)

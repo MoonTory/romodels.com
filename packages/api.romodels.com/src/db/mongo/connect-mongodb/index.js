@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // DB Config
-import { MONGO_URI } from '../../../../config';
+import { MONGO_URI } from '../../../config';
 
 export default async () => {
   try {

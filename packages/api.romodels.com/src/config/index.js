@@ -19,4 +19,5 @@ export const {
   REDIS_PASSWORD = process.env.REDIS_PASSWORD || '',
   REDIS_DB_NAME = process.env.REDIS_DB_NAME || '',
   REDIS_URL = `redis://:${REDIS_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}`
-} = process.env;
+
+} = process.env

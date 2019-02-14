@@ -2,35 +2,30 @@
  * Module dependencies.
  */
 
-import { TsukiServer } from '@/app';
+import app from '../app';
 import debug from 'debug';
 import http from 'http';
-import { APP_PORT } from '@/config';
+import { APP_PORT } from '../config';
 
-export const main = async () => {
+const main = async () => {
   /**
    * Get port from environment and store in Express.
    */
 
   const port = normalizePort(APP_PORT);
-
-  /**
-   * Creating a new instance of the TsukiServer which is an extended Express App
-   */
-
-  const app = await new TsukiServer(port);
+  app.set('port', port);
 
   /**
    * Create HTTP server.
    */
 
-  const server = await http.createServer(app);
+  const server = http.createServer(app);
 
   /**
    * Listen on provided port, on all network interfaces.
    */
 
-  await server.listen(port, () => console.log(`Server started @ http://localhost:${port}`));
+  server.listen(port, () => console.log(`Server started @ http://localhost:${port}`));
   server.on('error', onError);
   server.on('listening', onListening);
 
@@ -90,3 +85,5 @@ export const main = async () => {
     debug('Listening on ' + bind);
   }
 };
+
+main();

@@ -1,10 +1,10 @@
+
 /**
  * Node_Module dependencies.
  */
 import express, { urlencoded, json } from 'express';
-// import Redis from 'ioredis';
+import Redis from 'ioredis';
 import cookieParser from 'cookie-parser';
-import compression from 'compression';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -12,41 +12,50 @@ import cors from 'cors';
 /**
  * Local_Module dependencies.
  */
-import { TsukiApi } from '@/interfaces/api';
-import connectMongoDb from '@/infra/db/mongo/connectMongo';
-import { errorCatcher, errorHandler } from '@/infra/utils/middlewares';
+import { api } from '../routes';
+import { connectMongoDb } from '../db/mongo';
+import { errorCatcher, errorHandler } from '../utils/middlewares';
 
 /**
  * Configs.
  */
-import { NODE_ENV /*, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD*/ } from '../config';
+import { NODE_ENV, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } from '../config';
 
-export class TsukiServer extends express {
-  constructor(port) {
-    super();
+/**
+ * Initializing Express App.
+ */
+const app = express();
 
-    this.api = new TsukiApi();
+/**
+ * Express Middleware Stack.
+ */
+app.use(helmet());
+app.use(cors());
+app.use(morgan(NODE_ENV));
+app.use(json());
+app.use(urlencoded({ extended: false }));
+app.use(cookieParser());
 
-    this.set('port', port);
-    this.config();
-  }
+/**
+ * Connect to MongoDb.
+ */
+connectMongoDb();
 
-  config = async () => {
-    console.log('Configuring Express...');
+/**
+ * Ioredis Client.
+ */
+const redis = new Redis({
+  host: REDIS_HOST,
+  port: REDIS_PORT,
+  password: REDIS_PASSWORD,
+});
 
-    this.use(helmet());
-    this.use(cors());
-    this.use(compression());
-    this.use(json());
-    this.use(urlencoded({ extended: false }));
-    this.use(cookieParser());
-    this.use(morgan(NODE_ENV));
+app.use('/api', new api(redis));
 
-    await connectMongoDb();
+/**
+ * Express Error handling.
+ */
+app.use(errorCatcher);
+app.use(errorHandler);
 
-    this.use(this.api);
-
-    this.use(errorCatcher);
-    this.use(errorHandler);
-  };
-}
+export default app;
