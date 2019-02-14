@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import importRouters from './helpers/importRouters';
+import { importRouters } from '@/infra/helpers';
 
 export class TsukiApi extends Router {
   constructor() {
@@ -15,8 +15,8 @@ export class TsukiApi extends Router {
   };
 
   initRouters = routers => {
-    routers.forEach(el => {
-      this.use(this.path, el.router);
+    routers.forEach(router => {
+      this.use(this.path, router);
     });
   };
 }

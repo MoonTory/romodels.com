@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon -r node_modules/dotenv/config --exec babel-node src/index.js",
+    "start": "babel-node -r node_modules/dotenv/config src/index",
+    "start:dev": "nodemon -r node_modules/dotenv/config --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "serve": "node -r ./node_modules/dotenv/config dist/index.js"
   },
@@ -34,6 +35,7 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
+    "babel-plugin-root-import": "^6.1.0",
     "dotenv": "^6.2.0",
     "nodemon": "^1.18.10"
   }

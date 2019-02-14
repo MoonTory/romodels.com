@@ -2,10 +2,10 @@
  * Module dependencies.
  */
 
-import { TsukiServer } from '../app';
+import { TsukiServer } from '@/app';
 import debug from 'debug';
 import http from 'http';
-import { APP_PORT } from '../config';
+import { APP_PORT } from '@/config';
 
 export const main = async () => {
   /**

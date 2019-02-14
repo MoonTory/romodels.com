@@ -1,6 +1,6 @@
 import path from 'path';
 
-export default async modules => {
+export const importController = async modules => {
   try {
     const controllers = [];
 

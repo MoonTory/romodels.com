@@ -12,9 +12,9 @@ import cors from 'cors';
 /**
  * Local_Module dependencies.
  */
-import { TsukiApi } from '../interfaces/api';
-import connectMongoDb from '../infra/db/mongo/connectMongo';
-import { errorCatcher, errorHandler } from '../infra/utils/middlewares';
+import { TsukiApi } from '@/interfaces/api';
+import connectMongoDb from '@/infra/db/mongo/connectMongo';
+import { errorCatcher, errorHandler } from '@/infra/utils/middlewares';
 
 /**
  * Configs.
