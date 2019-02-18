@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './app';
 
-import 'bootswatch/dist/sandstone/bootstrap.min.css';
+import 'bootswatch/dist/lux/bootstrap.min.css';
 
 ReactDOM.render(
   <BrowserRouter>

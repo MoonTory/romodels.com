@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { Jumbotron } from '../../components/Jumbotron';
 
-export function Home({ children }) {
+export function Home(props) {
   return (
     <Fragment>
       <Jumbotron />
