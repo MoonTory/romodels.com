@@ -8,7 +8,7 @@ export function App() {
     <Fragment>
       <Header />
       <Main>
-        <Router/>
+        <Router />
       </Main>
       <Footer />
     </Fragment>
