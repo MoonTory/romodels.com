@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Container } from 'react-bootstrap';
 
 import Carousel from '../../components/Carousel';
 
