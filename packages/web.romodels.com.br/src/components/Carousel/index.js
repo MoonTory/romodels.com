@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Carousel } from 'react-bootstrap';
 
-import './style/carousel.css';
+import './styles/carousel.css';
 
 export default function iCarousel() {
   return (
