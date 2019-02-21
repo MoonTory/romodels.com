@@ -1,4 +1,3 @@
-
 /**
  * Node_Module dependencies.
  */
@@ -8,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
+import path from 'path';
 
 /**
  * Local_Module dependencies.
@@ -47,10 +47,13 @@ connectMongoDb();
 const redis = new Redis({
   host: REDIS_HOST,
   port: REDIS_PORT,
-  password: REDIS_PASSWORD,
+  password: REDIS_PASSWORD
 });
 
 app.use('/api', new api(redis));
+
+// Serve static assets
+app.use(express.static(path.resolve(__dirname, '../../../web.romodels.com.br', 'build')));
 
 /**
  * Express Error handling.
