@@ -35,7 +35,7 @@ export default function Header() {
                   <NavDropdown.Item>Plus Size</NavDropdown.Item>
                 </LinkContainer>
               </SubmenuDropdown>
-              {/* MOBILE DROPDOWN BECAUSE SUBMENU DON'T WORK WELL ON MOBILE */}
+              {/* MOBILE DROPDOWN BECAUSE SUBMENU DOESN'T WORK WELL ON MOBILE */}
               <MobileDropdown title='Feminino'>
                 <LinkContainer to='/modelos-fashion'>
                   <NavDropdown.Item>Fashion</NavDropdown.Item>
@@ -79,8 +79,11 @@ export default function Header() {
             <LinkContainer to='/agencia'>
               <Nav.Link>Servicos</Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/conact'>
+            <LinkContainer to='/quer-ser-modelo'>
               <Nav.Link>Quer ser Modelo</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/contato'>
+              <Nav.Link>Contato</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

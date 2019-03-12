@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 
-import Carousel from '../../components/Carousel';
+import { TsukiCarousel, RSS } from '../../components';
 
 export function Home(props) {
   return (
     <Fragment>
-      <Carousel />
-
-      <Carousel />
+      <TsukiCarousel />
+      <RSS />
+      {/* <Carousel /> */}
     </Fragment>
   );
 }

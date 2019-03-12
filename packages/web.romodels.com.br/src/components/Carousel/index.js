@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 import './styles/carousel.css';
 
-export default function iCarousel() {
+export function TsukiCarousel() {
   return (
     <Fragment>
       <Carousel>

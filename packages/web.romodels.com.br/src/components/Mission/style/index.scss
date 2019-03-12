@@ -1,28 +1,21 @@
-.team .col-lg-4 {
+.mission .col-md-6 {
   margin-bottom: 1.5rem;
   text-align: center;
   padding: 0 2em 0 2em;
 }
 
-.icons {
-  margin-top: 1rem;
-
-  a {
-    padding: 0.4rem;
-  }
-}
-
 // Media Query for screens that are bigger than 1024px e.g. Desktops
 @media screen and (min-width: 1024px) {
-  .team {
+  .mission {
     hr {
       margin: 0 0 4rem 0;
     }
   }
 }
 
+// Media Query for screens that are smaller than 1024px e.g. Mobile
 @media screen and (max-width: 1024px) {
-  .team {
+  .mission {
     text-align: center;
 
     .title {
@@ -34,7 +27,7 @@
     }
   }
 
-  .team-member {
+  .mission-item {
     margin: 3rem 0 3rem 0;
   }
 }

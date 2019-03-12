@@ -21,12 +21,17 @@ const footerStyle = {
 //   width: '100%'
 // };
 
+// <Fragment>
+//   <nav className='navbar navbar-expand-lg navbar-dark bg-primary' style={footerStyle}>
+//     {children}
+//   </nav>
+// </Fragment>
 export function Footer({ children }) {
   return (
-    <Fragment>
-      <nav className='navbar navbar-expand-lg navbar-dark bg-primary' style={footerStyle}>
-        {children}
-      </nav>
-    </Fragment>
+    <footer className='py-5 bg-dark'>
+      <div className='container'>
+        <p className='m-0 text-center text-white'>Copyright &copy; Ronaldo Oliveira Models, School & Production 2019</p>
+      </div>
+    </footer>
   );
 }
