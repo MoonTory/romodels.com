@@ -19,7 +19,7 @@ export function Team() {
             <img
               style={{ marginBottom: '3rem' }}
               className='rounded-circle'
-              src='https://source.unsplash.com/random/140x140'
+              src='http://placehold.it/140x140'
               alt='Generic placeholder'
               width='140'
               height='140'
@@ -44,7 +44,7 @@ export function Team() {
             <img
               style={{ marginBottom: '3rem' }}
               className='rounded-circle'
-              src='https://source.unsplash.com/random/140x140'
+              src='http://placehold.it/140x140'
               alt='Generic placeholder'
               width='140'
               height='140'
@@ -69,7 +69,7 @@ export function Team() {
             <img
               style={{ marginBottom: '3rem' }}
               className='rounded-circle'
-              src='https://source.unsplash.com/random/140x140'
+              src='http://placehold.it/140x140'
               alt='Generic placeholder'
               width='140'
               height='140'
