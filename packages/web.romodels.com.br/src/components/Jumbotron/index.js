@@ -6,7 +6,7 @@ export function Jumbotron(props) {
   return (
     <div
       style={{
-        borderBottom: 'solid 2px #444',
+        borderBottom: 'solid 2px #6f7f8c',
         borderRadius: '0',
         marginBottom: '0'
       }}

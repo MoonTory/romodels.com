@@ -10,7 +10,7 @@ export function Services() {
       <div className='row featurette'>
         <div className='col-md-7'>
           <h2 className='featurette-heading'>Agência de Modelos</h2>
-          <p className='lead'>
+          <p className='lead text-justify'>
             Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
             Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
           </p>
@@ -37,7 +37,7 @@ export function Services() {
       <div className='row featurette'>
         <div className='col-md-7 order-md-2'>
           <h2 className='featurette-heading'>Produção de Eventos</h2>
-          <p className='lead'>
+          <p className='lead text-justify'>
             Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
             Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
           </p>
@@ -66,7 +66,7 @@ export function Services() {
       <div className='row featurette'>
         <div className='col-md-7'>
           <h2 className='featurette-heading'>Ação Promocional</h2>
-          <p className='lead'>
+          <p className='lead text-justify'>
             Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
             Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
           </p>

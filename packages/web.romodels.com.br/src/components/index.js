@@ -5,3 +5,4 @@ export { Mission } from './Mission';
 export { RSS } from './RSS';
 export { Team } from './Team';
 export { Services } from './Services';
+export { Map } from './GoogleMap';
