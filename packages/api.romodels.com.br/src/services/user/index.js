@@ -51,6 +51,7 @@ export default {
       throw error;
     }
   },
+
   findByEmail: async ({ email }) => {
     try {
       // Find the user given the email
