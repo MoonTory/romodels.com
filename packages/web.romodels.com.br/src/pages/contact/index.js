@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { Jumbotron, Map } from '../../components';
+import { Jumbotron, GoogleMap } from '../../components';
 import { ContactForm } from '../../components/FormikStrap/ContactForm';
 
 export function Contact() {
@@ -12,7 +12,7 @@ export function Contact() {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-8 mb-4'>
-            <Map />
+            <GoogleMap />
           </div>
 
           <div className='col-lg-4 mb-4'>

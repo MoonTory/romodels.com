@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 import { genInfoWindowContent } from './genInfoWinContent';
 
-export class Map extends Component {
+export class GoogleMap extends Component {
   handleApiLoaded = (map, maps) => {
     // use map and maps objects
     const request = {

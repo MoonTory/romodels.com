@@ -5,5 +5,6 @@ export { Mission } from './Mission';
 export { InstagramFeed } from './InstagramFeed';
 export { Team } from './Team';
 export { Services } from './Services';
-export { Map } from './GoogleMap';
+export { GoogleMap } from './GoogleMap';
 export { SchoolInfo } from './SchoolInfo';
+export { Spinner } from './Spinner';

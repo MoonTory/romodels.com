@@ -4,30 +4,17 @@
   padding: 0 2em 0 2em;
 }
 
-// Media Query for screens that are bigger than 1024px e.g. Desktops
-@media screen and (min-width: 1024px) {
-  .about {
-    hr {
-      margin-bottom: 0;
-    }
-  }
+.featurette-divider {
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+.about-text {
+  padding-bottom: 2rem;
 }
 
 // Media Query for screens that are smaller than 1024px e.g. Mobile
 @media screen and (max-width: 1024px) {
-  .about {
-    text-align: center;
-
-    .title {
-      margin: 0 0.4em 0 0.4em;
-
-      hr {
-        margin: 0;
-      }
-    }
-  }
-
-  .about-item {
-    margin: 3rem 0 3rem 0;
+  .about-text {
+    padding-bottom: 1rem;
   }
 }

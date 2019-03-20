@@ -11,10 +11,6 @@
 
 // Media Query for screens that are smaller than 1024px e.g. Mobile
 @media screen and (max-width: 1024px) {
-  .school-divider {
-    margin: 3rem 0; /* Space out the Bootstrap <hr> more */
-  }
-
   .school-info {
     text-align: center;
 
@@ -25,9 +21,5 @@
         margin: 0;
       }
     }
-  }
-
-  .mission-item {
-    margin: 3rem 0 3rem 0;
   }
 }

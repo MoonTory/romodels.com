@@ -5,7 +5,7 @@ import './style/index.scss';
 export function Team() {
   return (
     <section>
-      <div style={{ marginTop: '0', marginBottom: '0', padding: '4rem 0 4rem 0' }} className='container team'>
+      <div style={{ paddingTop: '4rem', paddingBottom: '4rem' }} className='container team'>
         <div style={{ marginBottom: '2rem' }} className='row title'>
           <div className='col-lg-12'>
             <h3 className='font-weight-bold'>Colaboradores</h3>

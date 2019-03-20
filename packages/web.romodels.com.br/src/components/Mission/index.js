@@ -9,7 +9,7 @@ import './style/index.scss';
 export function Mission() {
   return (
     <section className='bg-dark text-white'>
-      <div style={{ padding: '4rem 0 4rem 0' }} className='container mission'>
+      <div style={{ paddingTop: '4rem', paddingBottom: '4rem' }} className='container mission'>
         <div style={{ marginBottom: '2rem' }} className='row title'>
           <div className='col-lg-12'>
             <h3 className='font-weight-bold'>Missao & Visao</h3>
