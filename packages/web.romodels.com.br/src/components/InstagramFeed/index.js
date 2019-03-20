@@ -10,7 +10,7 @@ export class InstagramFeed extends Component {
 
   async componentWillMount() {
     const instaData = await axios.get(
-      'https://api.instagram.com/v1/users/self/media/recent/?access_token=ACCESS_TOKEN&count=8'
+      'https://api.instagram.com/v1/users/self/media/recent/?access_token=3597322204.fc05a75.95d7898c38cb4b70922dcdb9005ff665&count=8'
     );
 
     this.setState({ data: instaData.data.data });
