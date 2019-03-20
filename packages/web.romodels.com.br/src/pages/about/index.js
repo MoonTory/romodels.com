@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Jumbotron, AboutUs, Mission, Team } from '../../components';
 
 export function About() {
   return (
-    <div>
+    <Fragment>
       <Jumbotron />
       <AboutUs />
       <Mission />
       <Team />
-    </div>
+    </Fragment>
   );
 }

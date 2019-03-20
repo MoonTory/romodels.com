@@ -23,30 +23,25 @@ export class Map extends Component {
     const service = new maps.places.PlacesService(map);
 
     service.getDetails(request, (results, status) => {
-      console.log('result', results);
       if (status === maps.places.PlacesServiceStatus.OK) {
-        this.renderMarkers(results, maps, map);
+        const infoWindow = new maps.InfoWindow();
+        const infoWinContent = genInfoWindowContent(results);
+        const marker = new maps.Marker({
+          position: {
+            lat: results.geometry.location.lat(),
+            lng: results.geometry.location.lng()
+          },
+          map: map,
+          title: 'Ronaldo Oliveira Models, School & Production'
+        });
+
+        infoWindow.setContent(infoWinContent);
+        infoWindow.open(map, marker);
+
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
       }
-    });
-  };
-
-  renderMarkers = async (results, maps, map) => {
-    const infoWindow = new maps.InfoWindow();
-    const infoWinContent = genInfoWindowContent(results);
-    const marker = new maps.Marker({
-      position: {
-        lat: results.geometry.location.lat(),
-        lng: results.geometry.location.lng()
-      },
-      map: map,
-      title: 'Hello World!'
-    });
-
-    infoWindow.setContent(infoWinContent);
-    infoWindow.open(map, marker);
-
-    marker.addListener('click', () => {
-      infoWindow.open(map, marker);
     });
   };
 
@@ -63,7 +58,7 @@ export class Map extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'GOOGLE_API_KEY_GOES_HERE', libraries: 'places' }}
+          bootstrapURLKeys={{ key: 'AIzaSyChTFUgMz9pItqll6yY8bwQA0yb7jk8HsE', libraries: 'places' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals

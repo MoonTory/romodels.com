@@ -38,7 +38,7 @@ function genCarouselImagesFromGoogleData(data) {
   data.photos.forEach((val, i, arr) => {
     payload += `
     <div class="carousel-item ${i === 0 ? 'active' : ''} ">
-      <div><img height='100%' width='100%' src='${val.getUrl()}' alt='Something'></div>
+      <div><img height='100%' width='100%' src='${val.getUrl()}' alt='carousel-item-${i + 1}'></div>
     </div>
   `;
   });

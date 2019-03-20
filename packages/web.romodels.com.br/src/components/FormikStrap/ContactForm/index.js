@@ -12,6 +12,7 @@ export class ContactForm extends Component {
           actions.setSubmitting(false);
           actions.resetForm();
         }}
+        // TODO: Write Yup validation for the form
         // validationSchema={registerSchema}
         render={({ isSubmitting, errors, touched, values }) => (
           <Form>
@@ -27,8 +28,8 @@ export class ContactForm extends Component {
             </div>
             <div className='form-group'>
               {errors.cellphone && touched.cellphone && <div className='alert alert-danger'>{errors.cellphone}</div>}
-              <label>Celular:</label>
-              <Field className='form-control' type='cellphone' name='cellphone' placeholder='Celular' />
+              <label>Celular / WhatsApp:</label>
+              <Field className='form-control' type='cellphone' name='cellphone' placeholder='Celular / WhatsApp' />
             </div>
             <div className='form-group'>
               <label>Mensagem:</label>
@@ -39,7 +40,7 @@ export class ContactForm extends Component {
                 cols='100'
                 type='message'
                 name='message'
-                placeholder='Mensagem...'
+                placeholder='Mensagem....'
               />
             </div>
             {isSubmitting ? null : (

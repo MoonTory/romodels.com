@@ -22,7 +22,7 @@ export function Jumbotron(props) {
         <div
           className='view overlay'
           style={{ background: 'rgba(236, 238, 236, 0.7)', zIndex: '2', padding: '1rem 0 1rem 0' }}>
-          <img alt='' src='assets/logo.svg' width='225' height='225' />
+          <img alt='' src='assets/logo.svg' width='275' height='275' />
           {props.hasText === undefined ? null : (
             <p className='lead text-white' style={{ marginBottom: '0' }}>
               {props.heroText}

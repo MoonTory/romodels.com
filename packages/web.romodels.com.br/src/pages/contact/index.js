@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Jumbotron, Map } from '../../components';
-import { ContactForm } from '../../components/Formik/ContactForm';
+import { ContactForm } from '../../components/FormikStrap/ContactForm';
 
 export function Contact() {
   return (
-    <div>
+    <Fragment>
       <Jumbotron />
       <br />
       <br />
@@ -20,7 +20,7 @@ export function Contact() {
             <hr />
             <div className=''>
               <p>Endereço: Av. T-02, Qd. 75, Lt. 14, n 744 - St. Bueno, Goiânia - GO, 74215-010, Brazil</p>
-              <p>Email: romodels@gmail.com</p>
+              <p>Email: ronaldooliveira@gmail.com</p>
               <p>Telefone: (62) 98418-2482</p>
             </div>
           </div>
@@ -35,6 +35,6 @@ export function Contact() {
         </div>
       </div>
       <br />
-    </div>
+    </Fragment>
   );
 }

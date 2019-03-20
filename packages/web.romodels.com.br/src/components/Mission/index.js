@@ -2,6 +2,10 @@ import React from 'react';
 
 import './style/index.scss';
 
+/**
+ * Mission Component
+ * @prop title
+ */
 export function Mission() {
   return (
     <section className='bg-dark text-white'>

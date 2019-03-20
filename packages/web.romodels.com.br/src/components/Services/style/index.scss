@@ -1,5 +1,5 @@
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -7,4 +7,9 @@
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.05rem;
+}
+
+.service-item {
+  font-size: 1.05rem;
+  font-weight: 300;
 }

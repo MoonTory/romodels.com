@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function RSS() {
+export function InstagramFeed() {
   return (
     <section>
       <div style={{ marginTop: '0', marginBottom: '0', padding: '4rem 0 4rem 0' }} className='container'>

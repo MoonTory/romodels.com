@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import { Jumbotron, Services } from '../../components';
+import { Jumbotron, SchoolInfo } from '../../components';
 
-export function Agency() {
+export function SchoolPage() {
   return (
     <Fragment>
       <Jumbotron />
-      <Services />
+      <SchoolInfo />
     </Fragment>
   );
 }

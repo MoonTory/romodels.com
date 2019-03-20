@@ -5,13 +5,9 @@ import './style/index.scss';
 export function AboutUs() {
   return (
     <section>
-      <div style={{ marginTop: '0', marginBottom: '0', padding: '4rem 0 4rem 0' }} className='container about'>
-        <div style={{ marginBottom: '2rem' }} className='row title'>
-          <div className='col-lg-12'>
-            <h3 className='font-weight-bold'>Nossa Historia</h3>
-            <hr />
-          </div>
-        </div>
+      <div style={{ padding: '4rem 0 4rem 0' }} className='container about'>
+        <h3 className='font-weight-bold'>Nossa Historia</h3>
+        <hr style={{ marginTop: '0' }} className='featurette-divider' />
 
         {/*  Begin of Mission Container*/}
         <div className='row'>
@@ -22,14 +18,26 @@ export function AboutUs() {
               eventos e Ações Promocionais.
             </p>
             <br />
-            <hr />
+            <hr className='featurette-divider' />
             <h4>Servicos</h4>
             <br />
-            <ul>
-              <li>Escola de Modelos</li>
-              <li>Agência de Modelos</li>
-              <li>Produção de Eventos</li>
-              <li>Ação Promocional</li>
+            <ul style={{ listStyle: 'none' }}>
+              <li>
+                <i style={{ paddingRight: '0.5rem' }} className='fas fa-angle-right' />
+                Escola de Modelos
+              </li>
+              <li>
+                <i style={{ paddingRight: '0.5rem' }} className='fas fa-angle-right' />
+                Agência de Modelos
+              </li>
+              <li>
+                <i style={{ paddingRight: '0.5rem' }} className='fas fa-angle-right' />
+                Produção de Eventos
+              </li>
+              <li>
+                <i style={{ paddingRight: '0.5rem' }} className='fas fa-angle-right' />
+                Ação Promocional
+              </li>
             </ul>
           </div>
           <div className='col-lg-6'>

@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 
-import { Jumbotron, Services } from '../../components';
+import { Jumbotron } from '../../components';
 
-export function Agency() {
+export function Models() {
   return (
     <Fragment>
       <Jumbotron />
-      <Services />
     </Fragment>
   );
 }
