@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { Gallery } from './Gallery';
 import { CategoryFilter } from './CategoryFilter';
 
 export class ModelGallery extends Component {
@@ -7,7 +8,7 @@ export class ModelGallery extends Component {
     return (
       <div>
         <CategoryFilter />
-        <p>Model Gallery</p>
+        <Gallery />
       </div>
     );
   }

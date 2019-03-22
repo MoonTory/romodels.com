@@ -63,9 +63,9 @@ export function Footer({ children }) {
           </div>
           <div className='col-md-4 text-white font-weight-lighter social madeby'>
             <p className='font-weight-lighter'>
-              Developed by Gustavo Quinta -{' '}
+              Made with <i className='fab fa-react' /> & <i className='fab fa-node-js' /> by{' '}
               <a href='https://github.com/moontory'>
-                <i className='fab fa-github' />
+                Gustavo Quinta - <i className='fab fa-github' />
               </a>
             </p>
           </div>
