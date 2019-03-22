@@ -1,0 +1,44 @@
+// Media Query for screens that are bigger than 1024px e.g. Desktops
+@media screen and (min-width: 1024px) {
+  .footer {
+    h5 {
+      padding-top: 2.6rem;
+      padding-bottom: 0.4rem;
+    }
+
+    .madeby {
+      text-align: right;
+    }
+  }
+}
+
+// Media Query for screens that are smaller than 1024px e.g. Mobile
+@media screen and (max-width: 1024px) {
+  .footer {
+    text-align: center;
+
+    .footer-item {
+      padding-bottom: 3rem;
+    }
+
+    h5 {
+      text-align: center;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
+
+@mixin easeOut {
+  transition: all 0.4s ease-out;
+}
+
+.social {
+  a {
+    color: white;
+
+    &:hover {
+      color: black;
+      @include easeOut;
+    }
+  }
+}

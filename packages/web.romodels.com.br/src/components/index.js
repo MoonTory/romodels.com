@@ -8,3 +8,4 @@ export { Services } from './Services';
 export { GoogleMap } from './GoogleMap';
 export { SchoolInfo } from './SchoolInfo';
 export { Spinner } from './Spinner';
+export { ModelGallery } from './ModelGallery';
