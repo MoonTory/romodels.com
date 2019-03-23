@@ -24,5 +24,30 @@ export default {
       .string()
       .email()
       .required()
+  }),
+  modeloSchema: joi.object().keys({
+    name: joi.string().required(),
+    sex: joi
+      .string()
+      .valid('male', 'female')
+      .required(),
+    category: joi
+      .array()
+      .items(joi.string())
+      .required(),
+    medidas: joi
+      .object({
+        altura: joi.string(),
+        busto: joi.string(),
+        cintura: joi.string(),
+        quadril: joi.string(),
+        torax: joi.string(),
+        ternobusto: joi.string(),
+        manequim: joi.string(),
+        sapatos: joi.string(),
+        olhos: joi.string(),
+        cabelos: joi.string()
+      })
+      .required()
   })
 };
