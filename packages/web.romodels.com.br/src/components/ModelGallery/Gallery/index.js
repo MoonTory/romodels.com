@@ -13,8 +13,7 @@ function mockData(data) {
   return data;
 }
 
-export function Gallery() {
-  let data = [];
+export function Gallery({ data }) {
   mockData(data);
 
   return (
