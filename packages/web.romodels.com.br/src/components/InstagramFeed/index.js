@@ -5,7 +5,7 @@ import { Spinner } from '../Spinner';
 
 import './style/index.scss';
 
-import config from '../../config';
+import config from '../../config/dev';
 
 export class InstagramFeed extends Component {
   state = {
