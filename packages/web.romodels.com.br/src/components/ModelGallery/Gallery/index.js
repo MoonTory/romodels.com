@@ -1,6 +1,7 @@
 import React from 'react';
 
 // import { CardWrapper } from '../../CardWrapper';
+import './scss/index.scss';
 
 function mockData(data) {
   for (let index = 0; index < 20; index++) {
@@ -24,7 +25,7 @@ export function Gallery({ data }) {
             <div
               key={index}
               style={{ marginBottom: '1rem', marginTop: '1rem' }}
-              className="col-lg-3 col-md-4 col-sm-6"
+              className="col-lg-3 col-md-4 col-sm-6 gallery-card"
             >
               <a href={value.url}>
                 <div className="card shadow-sm">
