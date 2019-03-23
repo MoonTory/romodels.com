@@ -4,11 +4,14 @@ import { Gallery } from './Gallery';
 import { CategoryFilter } from './CategoryFilter';
 
 export class ModelGallery extends Component {
+  data = [];
+
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: '4rem' }}>
         <CategoryFilter />
-        <Gallery />
+        <br />
+        <Gallery data={this.data} />
       </div>
     );
   }
