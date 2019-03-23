@@ -4,13 +4,37 @@ import { Gallery } from './Gallery';
 import { CategoryFilter } from './CategoryFilter';
 
 export class ModelGallery extends Component {
-  data = [];
+  state = {
+    activeCategory: 'all',
+    data: []
+  };
+
+  componentWillMount = () => {
+    this.setState({ data: this.mockData() });
+  };
+
+  handleCategorySelect = category => {
+    console.log('category', category);
+    this.setState({ activeCategory: category });
+  };
+
+  mockData() {
+    let data = [];
+    for (let index = 0; index < 20; index++) {
+      data.push({
+        id: index,
+        url: 'http://placehold.it/200x200'
+      });
+    }
+
+    return data;
+  }
 
   render() {
     return (
       <Fragment>
-        <CategoryFilter>
-          <Gallery data={this.data} />
+        <CategoryFilter handleCategorySelect={this.handleCategorySelect}>
+          <Gallery data={this.state.data} />
         </CategoryFilter>
       </Fragment>
     );

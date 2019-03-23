@@ -1,6 +1,10 @@
 import React from 'react';
 
-export function CategoryFilter({ children }) {
+export function CategoryFilter({ children, handleCategorySelect }) {
+  function onClick(category) {
+    handleCategorySelect(category);
+  }
+
   return (
     <div>
       <ul
@@ -24,10 +28,22 @@ export function CategoryFilter({ children }) {
             Masculino
           </a>
           <div className="dropdown-menu">
-            <span style={{ cursor: 'pointer' }} className="dropdown-item">
+            <span
+              onClick={() => {
+                onClick('all');
+              }}
+              style={{ cursor: 'pointer' }}
+              className="dropdown-item"
+            >
               Todos
             </span>
-            <span style={{ cursor: 'pointer' }} className="dropdown-item">
+            <span
+              onClick={() => {
+                onClick('fashion');
+              }}
+              style={{ cursor: 'pointer' }}
+              className="dropdown-item"
+            >
               Fashion
             </span>
             <span style={{ cursor: 'pointer' }} className="dropdown-item">

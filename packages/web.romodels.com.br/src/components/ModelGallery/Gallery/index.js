@@ -3,20 +3,7 @@ import React from 'react';
 // import { CardWrapper } from '../../CardWrapper';
 import './scss/index.scss';
 
-function mockData(data) {
-  for (let index = 0; index < 20; index++) {
-    data.push({
-      id: index,
-      url: 'http://placehold.it/200x200'
-    });
-  }
-
-  return data;
-}
-
 export function Gallery({ data }) {
-  mockData(data);
-
   return (
     <div className="container">
       <div className="row">
