@@ -25,8 +25,12 @@ export default {
       .email()
       .required()
   }),
-  modeloSchema: joi.object().keys({
-    name: joi.string().required(),
+  modelSchema: joi.object().keys({
+    name: joi.object({
+      first_name: joi.string(),
+      last_name: joi.string(),
+      full_name: joi.string()
+    }),
     sex: joi
       .string()
       .valid('male', 'female')

@@ -1,14 +1,24 @@
 import mongoose from 'mongoose';
 
-const ModeloSchema = mongoose.Schema(
+const CastSchema = mongoose.Schema(
   {
     name: {
-      type: String,
-      required: true
+      first_name: {
+        type: String,
+        required: true
+      },
+      last_name: {
+        type: String,
+        required: true
+      },
+      full_name: {
+        type: String,
+        required: true
+      }
     },
     sex: {
       type: String,
-      enum: ['masculino', 'feminino'],
+      enum: ['male', 'female'],
       required: true
     },
     category: {
@@ -17,10 +27,11 @@ const ModeloSchema = mongoose.Schema(
     },
     hidden: {
       type: Boolean,
-      default: false,
-      required: true
+      default: false
     },
-    photos: [{ url: String }],
+    photos: {
+      gallery: [{ url: String }]
+    },
     medidas: {
       altura: {
         type: String
@@ -59,4 +70,4 @@ const ModeloSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model('Modelo', ModeloSchema);
+export default mongoose.model('Cast', CastSchema);

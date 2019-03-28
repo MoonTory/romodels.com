@@ -18,6 +18,10 @@ export const {
   REDIS_PORT = process.env.REDIS_PORT || '',
   REDIS_PASSWORD = process.env.REDIS_PASSWORD || '',
   REDIS_DB_NAME = process.env.REDIS_DB_NAME || '',
-  REDIS_URL = `redis://:${REDIS_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}`
+  REDIS_URL = `redis://:${REDIS_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}`,
 
-} = process.env
+  // Cloudinary Config
+  CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME.toString() || '',
+  CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY || '',
+  CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET || ''
+} = process.env;

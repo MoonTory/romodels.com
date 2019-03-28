@@ -71,7 +71,7 @@ export default {
 
           res.status(201).json({
             payload: {
-              message: 'You registered successfully! Please confirm your email before logging into your account!'
+              message: 'You have registered successfully! Please confirm your email before logging into your account!'
             }
           });
         }
@@ -83,23 +83,27 @@ export default {
 
   // Login Controler Middleware
   login: async (req, res, next) => {
-    if (req.user.profile.confirmed !== true) {
-      res.status(401).json({
+    try {
+      if (req.user.profile.confirmed !== true) {
+        res.status(401).json({
+          payload: {
+            message: 'Please confirm your E-mail!'
+          }
+        });
+        return;
+      }
+
+      const token = await JwtService.signToken(req.user);
+
+      res.status(200).json({
         payload: {
-          message: 'Please confirm your E-mail!'
+          message: `Users-Controller handling login POST request to ${req.baseUrl}`,
+          token: token
         }
       });
-      return;
+    } catch (error) {
+      next(error);
     }
-
-    const token = await JwtService.signToken(req.user);
-
-    res.status(200).json({
-      payload: {
-        message: `Users-Controller handling login POST request to ${req.baseUrl}`,
-        token: token
-      }
-    });
   },
 
   resendEmailConfirmationCallback: redis => {
