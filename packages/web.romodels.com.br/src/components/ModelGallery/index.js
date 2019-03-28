@@ -33,7 +33,7 @@ export class ModelGallery extends Component {
   render() {
     return (
       <Fragment>
-        <CategoryFilter handleCategorySelect={this.handleCategorySelect}>
+        <CategoryFilter onCategorySelect={this.handleCategorySelect}>
           <Gallery data={this.state.data} />
         </CategoryFilter>
       </Fragment>
