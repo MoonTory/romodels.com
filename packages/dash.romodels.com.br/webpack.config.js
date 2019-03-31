@@ -82,5 +82,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css'
     })
-  ]
+  ],
+  // Webpack-dev-server configuration
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    hot: true,
+    compress: true,
+    port: 4000
+  }
 };
