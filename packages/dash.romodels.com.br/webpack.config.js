@@ -8,14 +8,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 2.x via its events.
 // https://www.npmjs.com/package/react-dev-utils
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
-
+// This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS. It supports
+// On-Demand-Loading of CSS and SourceMaps.
+// https://github.com/webpack-contrib/mini-css-extract-plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Constant with our paths
 const paths = {
   DIST: path.resolve(__dirname, 'dist'),
   SOURCE: path.resolve(__dirname, 'src'),
-  PUBLIC: path.resolve(__dirname, 'public')
+  PUBLIC: path.resolve(__dirname, 'public'),
+  NODE: path.resolve(__dirname, 'node_modules')
 };
 
 console.log('paths', paths);
@@ -58,7 +61,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss|sass)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
@@ -79,10 +82,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css'
     })
-  ],
-  // Options for webpack-dev-server.
-  devServer: {
-    // the 'open' prop tell's webpack-dev-server to open the browser on startup.
-    open: true
-  }
+  ]
 };

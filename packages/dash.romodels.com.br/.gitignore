@@ -8,8 +8,8 @@
 # testing
 
 # production
-/build
-**/build/**
+/dist
+**/dist/**
 
 # misc
 .env
