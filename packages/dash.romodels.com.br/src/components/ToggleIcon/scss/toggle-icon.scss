@@ -1,0 +1,25 @@
+// Media Query for screens that are smaller than 1024px e.g. Mobile
+@media screen and (max-width: 1024px) {
+  .toggle-icon {
+    visibility: hidden;
+    display: none;
+  }
+
+  .toggle-icon-mobile {
+    visibility: inherit;
+    display: inline;
+  }
+}
+
+// Media Query for screens that are smaller than 1024px e.g. Mobile
+@media screen and (min-width: 1024px) {
+  .toggle-icon-mobile {
+    visibility: hidden;
+    display: none;
+  }
+
+  .toggle-icon {
+    visibility: inherit;
+    display: inline;
+  }
+}
