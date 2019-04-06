@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Route } from 'react-router-dom';
+
+import { connect as reduxConnect } from 'react-redux';
 
 import { Header, Main, Sidebar } from '../../components';
 
-export function Dashboard(props) {
+function IDashboard(props) {
   return (
     <Fragment>
       <Header />
@@ -16,3 +18,12 @@ export function Dashboard(props) {
     </Fragment>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    token: state.auth.token,
+    isAuthenticated: state.auth.isAuthenticated
+  };
+}
+
+export const Dashboard = reduxConnect(mapStateToProps, null)(IDashboard);

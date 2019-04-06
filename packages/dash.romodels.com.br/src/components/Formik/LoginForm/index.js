@@ -1,24 +1,23 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
+import { connect as reduxConnect } from 'react-redux';
+
+// Redux Actions
+import { loginUser } from '../../../lib/redux/actions/auth';
 
 import { Spinner } from '../../Spinner';
 
-export class LoginForm extends Component {
+class ILoginForm extends Component {
   handleSumbit = async (data, actions) => {
     const { email, password } = data;
-    const test = { email: 'test@test.com', password: 'test' };
     const payload = { email, password };
 
-    setTimeout(() => {
-      console.log('payload', payload);
-      console.log('test', test);
-      actions.resetForm();
-      actions.setSubmitting(false);
+    await this.props.loginUser(payload);
 
-      if (test.email === payload.email && test.password === payload.password) {
-        this.props.onSubmit(true);
-      }
-    }, 2000);
+    actions.setSubmitting(false);
+    actions.resetForm();
+
+    this.props.onSubmit(true);
   };
 
   render() {
@@ -32,6 +31,7 @@ export class LoginForm extends Component {
         // validationSchema={loginSchema}
         render={({ isSubmitting }) => (
           <Form className='form-login'>
+            {this.props.loginError ? <div className='alert alert-danger'>{this.props.loginError}</div> : null}
             <Field className='form-control' type='email' name='email' placeholder='Email' />
             <Field className='form-control' type='password' name='password' placeholder='Password' />
             <br />
@@ -48,3 +48,11 @@ export class LoginForm extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    loginError: state.auth.loginError
+  };
+}
+
+export const LoginForm = reduxConnect(mapStateToProps, { loginUser })(ILoginForm);
