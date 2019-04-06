@@ -9,7 +9,7 @@ export function Header() {
     <Fragment>
       <nav className='navbar navbar-expand-md navbar-dark bg-secondary text-white'>
         <ToggleIcon both={true} dataToggle='collapse' dataTarget='#sidebar' />
-        <Link className='navbar-brand' to='/' title='Ronaldo Oliveira Models School & Production'>
+        <Link className='navbar-brand' to='/dashboard' title='Ronaldo Oliveira Models School & Production'>
           <img alt='logo_small' src={logo_small} width='30' height='30' />
         </Link>
 
