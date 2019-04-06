@@ -1,0 +1,4 @@
+export const AUTH_LOGIN = 'AUTH_LOGIN';
+export const AUTH_REGISTER = 'AUTH_REGISTER';
+export const AUTH_REGISTER_ERROR = 'AUTH_REGISTER_ERROR';
+export const AUTH_LOGIN_ERROR = 'AUTH_LOGIN_ERROR';
